@@ -1,0 +1,464 @@
+<!--
+Written for COMP 6620 by Team BJC-B 
+Wyatt LeMaster, Tyler Mathew McGlawn, Tyler McMculla, Krystal Lin
+11/30/22
+
+Github Pages - https://earpboy1064.github.io/earpboy.github.io/
+Github Repository - https://github.com/earpboy1064/earpboy.github.io
+Wyatt LeMaster is the owner of the repository.
+
+can visit above link to view site.
+
+Works cited and resources used at bottom of page.
+
+INDEX
+-->
+
+
+<html>
+        <head>
+                <title>Beauty and Joy in Computing </title>
+                <meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+                <meta name="description" content="" />
+                <meta name="keywords" content="" />
+                <link rel="stylesheet" href="assets/css/main.css" />
+        </head>
+        <body class="is-preload">
+        
+                        <header id="header">
+
+                                <!--Drop down-->
+                                <a class="logo" href="index.html" ><div class="image"> <img src="images/bjc.png"></div></a>
+
+                                <input type ="text" class = "search input"id="Sbar" placeholder="Search" onkeyup="filter()">
+                                <ul id = "myUL" class = "search results a">
+                                        <li><a class = "dropDown" href="PythonIntro.html">Python Intro</a></li>
+                                        <li><a class = "dropDown" href="Lesson1.html">Python Lesson 1</a></li>
+                                        <li><a class = "dropDown" href="Lesson2.html">Python Lesson 2</a></li>
+                                        <li><a class = "dropDown" href="Lesson3.html">Python Lesson 3</a></li>
+                                        <li><a class = "dropDown" href="Lesson4.html">Python Lesson 4</a></li>
+
+
+                                        <li><a class = "dropDown" href="JavaIntro.html">Java Intro</a></li>
+                                        <li><a class = "dropDown" href="Lesson1Java.html">Java Lesson 1</a></li>
+                                        <li><a class = "dropDown" href="Lesson2Java.html">Java Lesson 2</a></li>
+                                        <li><a class = "dropDown" href="Lesson3Java.html">Java Lesson 3</a></li>
+                                        <li><a class = "dropDown" href="Lesson4Java.html">Java Lesson 4</a></li>
+
+
+                                        <li><a class = "dropDown" href="C++Intro.html">C++ Intro</a></li>
+                                        <li><a class = "dropDown" href="Lesson1C++.html">C++ Lesson 1</a></li>
+                                        <li><a class = "dropDown" href="Lesson2C++.html">C++ Lesson 2</a></li>
+                                        <li><a class = "dropDown" href="Lesson3C++.html">C++ Lesson 3</a></li>
+                                        <li><a class = "dropDown" href="Lesson4C++.html">C++ Lesson 4</a></li>
+
+                                </ul> 
+                                
+                                <nav>
+                                        <a href="#menu">Menu</a>
+                                </nav>
+                        </header>
+
+                        <style>
+                        search {
+                                background-color: transparent !important;
+   
+                        }
+                                .input[type ="text"]
+                                {
+                                        position: fixed;
+                                        right:10%;
+                                        float: right;
+                                        width: 200px;
+                                        height: 30px;
+                                        background-color: transparent !important;
+                                        padding: 6px;
+                                        border: none;
+                                        margin-top: 8px;
+                                        margin-right: 16px;
+                                        font-size: 17px;
+                                }
+                                .dropDown
+                                {
+                                color: white;
+                                font-style: bold;
+                                text-decoration: none; 
+
+
+                                }
+                                .results
+                                {
+
+                                        position: absolute;
+                                        background-color: rgba(65, 65, 65, 0.4);
+                                        border-radius: 5px;
+                                        color:#f5f5f5;
+                                        width: 200px;
+                                        list-style: none;
+                                        float: right;
+                                        top: 100%;
+                                        right:10%;
+                                        margin: 6px;
+                                        margin-right: 16px;
+                                        margin-top: 0px;
+                                        padding: 6px;
+                                        border: none;
+                                       
+
+                                }
+
+                                .lessonList
+                                {
+
+                                        color: black;
+                                        border-radius: 5px;
+                                        color:#f5f5f5;
+                                        list-style: none;
+                                        text-decoration: none;
+                                        margin: 6px;
+                                        padding: 6px;
+                                       
+
+                                }
+
+                                .lessonFormat
+                                {
+                                color: rgb(56, 35, 153);
+                                font-style: bold;
+                                font-size: 30;
+                                font: pacifico;
+                                text-decoration: none;
+                                }
+
+                                .pythonlessonHeader
+                                {
+                                color:blue;
+                                font-style: bold;
+                                font-size: 50;
+                                text-decoration: none;
+                                text-align: center;
+
+                                }
+
+                                .javalessonHeader
+                                {
+                                color:#d35216;
+                                font-style: bold;
+                                font-size: 50;
+                                text-decoration: none;
+                                text-align: center;
+
+                                }
+
+                                .ClessonHeader
+                                {
+                                text-align: center;
+                                color:#cec21b;
+                                font-style: bold;
+                                font-size: 50;
+                                text-decoration: none;
+
+                                }
+                                
+                        
+                        </style>
+
+
+
+
+
+
+                <!-- Nav -->
+                <nav id="menu">
+                        <ul class="links">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="PythonIntro.html">Learn Python</a></li>
+                                <li><a href="JavaIntro.html">Learn Java</a></li>
+                                <li><a href="C++Intro.html">Learn C++</a></li>
+                                       
+                        </ul>
+                </nav>
+                <!-- Banner -->
+                        <section id="banner">
+                                <div class="inner">
+                                        <h2>Beauty and Joy in Computing</h2>
+                                        <p><b>Begin your journey today!</b><br />
+                                       <!-- <b>designed by <a href="https://templated.co/"><font color = "orange">TEMPLATED</font></a> and released under the Creative Commons License.</b></p> -->
+                                </div>
+                        </section>
+
+                <!-- Highlights -->
+                        <section class="wrapper">
+                                <div class="inner">
+                                        <header class="special">
+                                                <h2>Choose a Language to begin learning</h2>
+                                        </header>
+                                        <div class="highlights">
+                                                <section>
+                                                        <div class="content modifier" >
+                                                                
+                                                                <header >
+                                                                        <h3 class="Topics"><a href="PythonIntro.html" style="color:#1f2bd3;" onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#1f2bd3'">Python</a></h3>
+                                                                      
+                                                                </header>
+                                                                
+                                                        </div>
+                                                </section>
+
+
+                                                <section>
+                                                        <div class="content">
+                                                                <header>
+                                                                        <h3 class = "Topics"><a href="JavaIntro.html" style="color:#d35216;" onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#d35216'">Java</a></h3>
+                                                                        
+                                                                </header>
+                                                        </div>
+                                                </section>
+                                                
+                                               
+                                                
+                                                <section>
+                                                        <div class="content">
+                                                                <header>
+                                                                        <h3 class = Topics><a href="C++Intro.html" style="color:#cec21b;"  onMouseOver="this.style.color='#000000'" onMouseOut="this.style.color='#cec21b'">C++</a></h3>
+                                                                       
+                                                                        </header>                                               
+                                                        </div>
+                                                </section>
+                                        </div>
+                        </section>
+
+                <!-- CTA -->
+                        <section id="cta" class="wrapper">
+                                <div class="inner">
+				<h2>Serving the community</h2>
+                                </div>
+                        </section>
+
+
+
+
+
+<!-- Table -->
+                                                                        <div class="table-wrapper">
+                                                                                <table>
+                                                                                        <thead>
+                                                                                                <tr>
+<section class="wrapper">
+                                <div class="inner">
+                                        <header class="special">
+                                                <h2>Detailed Lesson List</h2>
+                                        </header>
+                                        <div class="testimonials">
+                                                       
+						<section>                                                                                                            
+							<div class="content"> 
+								
+                                                                        <h3 class="topics pythonlessonHeader">Python</h3>
+									<p><ul class = "lessonList">
+                                                                                <li ><a class="lessonFormat" href="PythonIntro.html">Python Intro</a></li>
+                                                                                <li><a  class="lessonFormat" href="Lesson1.html">Python Lesson 1</a></li>
+                                                                                <li><a  class="lessonFormat" href="Lesson2.html">Python Lesson 2</a></li>
+                                                                                <li><a  class="lessonFormat" href="Lesson3.html">Python Lesson 3</a></li>
+                                                                                <li><a  class="lessonFormat" href="Lesson4.html">Python Lesson 4</a></li>
+                                                                        </p>
+								
+								
+									
+								
+							</div>
+						</section>
+                                                <section>                                                                                                            
+							<div class="content"> 
+								
+                                                                        <h3 class="topics javalessonHeader">Java</h3>
+									<p><ul class = "lessonList">
+                                                                                <li ><a class="lessonFormat" href="JavaIntro.html">Java Intro</a></li>
+                                                                                <li><a  class="lessonFormat" href="Lesson1Java.html">Java Lesson 1</a></li>
+                                                                                <li><a  class="lessonFormat" href="Lesson2Java.html">Java Lesson 2</a></li>
+                                                                                <li><a  class="lessonFormat" href="Lesson3Java.html">Java Lesson 3</a></li>
+                                                                                <li><a  class="lessonFormat" href="Lesson4Java.html">Java Lesson 4</a></li>
+                                                                        </p>
+								
+								
+									
+								
+							</div>
+						</section>
+                                                <section>                                                                                                            
+							<div class="content"> 
+								
+                                                                        <h3 class="topics ClessonHeader">C++</h3>
+									<p><ul class = "lessonList">
+                                                                                <li ><a class="lessonFormat" href="C++Intro.html">C++ Intro</a></li>
+                                                                                <li><a  class="lessonFormat" href="Lesson1C++.html">C++ Lesson 1</a></li>
+                                                                                <li><a  class="lessonFormat" href="Lesson2C++.html">C++ Lesson 2</a></li>
+                                                                                <li><a  class="lessonFormat" href="Lesson3C++.html">C++ Lesson 3</a></li>
+                                                                                <li><a  class="lessonFormat" href="Lesson4C++.html">C++ Lesson 4</a></li>
+                                                                        </p>
+								
+								
+									
+								
+							</div>
+						</section>
+                                        </div>
+                                </div>
+                        </section>
+
+                <!-- Footer -->
+                        <footer id="footer">
+                                <div class="inner">
+                                        <div class="content">
+                                                <section>
+                                                        <h3>Beauty and Joy in Computing</h3>
+                                                        <p>Built to help children and adults alike learn and grow by teaching the fundamentals of computing through short easy lessons.</p>
+                                                </section>
+                                               
+                                                <section>
+                                                        <h4>Follow Us!</h4>
+                                                        <ul class="plain">
+                                                                <li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                                                                <li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                                                                <li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+                                                        </ul>
+                                                </section>
+                                        </div>
+                                        <div class="copyright">
+                                                &copy;<a href="https://www.freepik.com/free-photo/data-technology-blue-background-with-hacker-remixed-media_16016731.htm#query=computer%20programming%20background&position=13&from_view=keyword">Images from rawpixel.com</a>
+                                               <br> <a href="https://templated.co/">@templatedco</a>
+                                                
+                                        </div>
+                                </div>
+                        </footer>
+                <!-- Scripts -->
+                        <script src="assets/js/jquery.min.js"></script>
+                        <script src="assets/js/browser.min.js"></script>
+                        <script src="assets/js/breakpoints.min.js"></script>
+                        <script src="assets/js/util.js"></script>
+                        <script src="assets/js/main.js"></script>
+
+        </body>
+</html>
+
+<!-- java Script !-->
+<html>
+	<head>
+		<script>
+
+			
+
+                        window.onload = filter();             
+
+			function TakeMeThere(event) {
+
+                                console.log(event.keyCode);
+
+                                if (event.keyCode == 13)
+                                {
+                                        console.log(Sbar.value);
+                                        self.location=Sbar.value;               
+
+                                }
+				//return true;
+			}
+
+
+                function filter()
+                {
+                       // console.log(event.keyCode);
+                        var input, filter, ul, li, a, i, txtValue;
+                        input = document.getElementById('Sbar');
+                        filter = input.value.toUpperCase();
+                        ul = document.getElementById("myUL");
+                        li = ul.getElementsByTagName('li');
+                        console.log(input.value);
+                        ul.style.display = "";
+
+                        // Loop through all list items, and hide those who don't match the search query
+                        for (i = 0; i < li.length; i++) 
+                        {
+                                a = li[i].getElementsByTagName("a")[0];
+                                txtValue = a.textContent || a.innerText;
+
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                         li[i].style.display = "";
+                                } 
+                                else {
+                                        li[i].style.display = "none";
+                                        }
+                        }
+
+                        
+                        // This runs at the start to hide all of the elements
+                        if (input.value === "")
+                        {
+                                ul.style.display = "none";
+                        }
+
+                }
+
+                        
+                       
+
+
+		</script>
+
+
+		<style>
+
+                        .shift
+                        {
+                                transform: translateY(-140%);
+                                 transform: translateX(30%);
+
+
+
+                        }
+                        .modifer
+                        {
+                                background-color: aqua;
+
+
+
+                        }
+
+                        .Topics{
+                                font-size: 40px;
+                                font-weight: bold;
+                                
+
+
+
+                        }
+
+			
+
+			form {
+				margin: 0 auto;
+				width: 600px;
+			}
+
+			
+		</style>
+	</head>
+
+	<body>
+		
+</html>
+
+
+<!--Resources Used / Works sited
+
+https://www.freepik.com/free-photo/data-technology-blue-background-with-hacker-remixed-media_16016731.htm#query=computer%20programming%20background&position=13&from_view=keyword">Image by rawpixel.com</a> on Freepik
+
+Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+
+https://www.w3schools.com/howto/howto_js_filter_lists.asp
+https://www.geeksforgeeks.org/html-forms/
+
+
+-->
