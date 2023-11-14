@@ -5,6 +5,10 @@ The final project for COMP 6620 User Interface Design and Evaluation.
 - For source code specific questions, please refer to app-src/README.md
 - The image is based on the lastest free UBI8 so it is RHEL binary compatible
 
+SCRATCH:
+Email: bjcproject@outlook.com
+Username: BJC_scratch
+Password: Pass123!@#
 
 To deploy this project locally in a container, do the following:
 - Obtain a copy of dbcreds.php and add it to app-src/dbcreds.php
