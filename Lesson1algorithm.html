@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<!--
+Written for COMP 6620 by Team BJC-B 
+Wyatt LeMaster, Tyler Mathew McGlawn, Tyler McMculla, Krystal Lin
+11/30/22
+
+Github Pages - https://earpboy1064.github.io/earpboy.github.io/
+Github Repository - https://github.com/earpboy1064/earpboy.github.io
+Wyatt LeMaster is the owner of the repository.
+
+can visit above link to view site.
+
+Works cited and resources used at bottom of page.
+
+
+-->
+<html>
+	<head>
+		<title>Radix Sort</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">Algorithm</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+			
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="JavaIntro.html">Learn Java</a></li>
+					<li><a href="C++Intro.html">Learn C++</a></li>
+				   
+			</ul>
+	</nav>
+		 
+
+		<!-- Heading -->
+			<div id="heading" >
+				<h1>Understanding Radix Sort: A Linear Time Sorting Algorithm</h1>
+			</div>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+						<header>
+							<h2><font color = "green">Introduction</font></h2>
+						</header>
+						
+						<!-- <audio controls>
+						<Source src="./SoundRecordings/Python1.ogg"  type = "audio/ogg"/>	
+						Your browser does not support audio	
+						</audio> -->
+		
+						<p>
+							Radix sort is a linear time, non-comparative sorting algorithm that operates by distributing elements into buckets according to their individual digits. 
+							This sorting technique is particularly efficient when applied to integers or strings of fixed length. 
+							Radix sort's uniqueness lies in its ability to exploit the positional notation of numbers, making it a well-suited algorithm for a variety of applications, including sorting integers, strings, and more.
+							<!-- <br> 
+							<code> output = "Hello world" </code>
+							<br>
+							The name of our string is output, this is how we will tell the computer what it should print. 
+							<br>
+							<code> print(output) </code>
+							<br>
+							After we have made our new string and defined what it contains, 
+							we will then tell the computer to print our string. If we check our Terminal we should be able to see our string has been printed.
+							<br>
+							<code>Hello world</code> -->
+							</p><br>
+							<header>
+								<h3><font color = "green">Working of Radix Sort</font></h3>
+							</header>
+							<p>
+								<ol>
+									<li> <b>Understanding the Key Concept:</b></li>
+									<p> Radix sort is based on the idea of processing digits or characters from the least significant digit (LSD) to the most significant digit (MSD) or vice versa. 
+										The order of processing is crucial to the algorithm's correctness.</p>
+									<li> <b>Bucket Distribution:</b></li>
+									<p>
+										Radix sort initially distributes elements into buckets based on the value of the current digit being processed. 
+										This distribution is repeated for each digit, gradually sorting the elements into the correct order
+									</p>
+									<li><b>Stable Sorting:</b></li>
+									<p>
+										Radix sort is a stable sorting algorithm, meaning that it preserves the relative order of equal elements. 
+										The stability is maintained through the process of distributing elements into buckets and collecting them in a defined order
+									</p>
+									<li><b>Variants:</b></li>
+									<p>Radix sort comes in two main variants: LSD (Least Significant Digit) radix sort and MSD (Most Significant Digit) radix sort. 
+										LSD radix sort processes digits from the rightmost side to the leftmost side, while MSD radix sort processes digits in the opposite order.</p>
+								</ol>
+							</p>
+							<header>
+								<h3><font color = "green">Implementation of Radix Sort</font></h3>
+							</header>
+							<p>
+								To illustrate the implementation of Radix Sort, let's consider a Python implementation for sorting an array of non-negative integers.
+							</p>
+							<code>def radix_sort(arr): 
+    # Find the maximum number to determine the number of digits <br>
+    &nbsp;max_num = max(arr) <br>
+    &nbsp;exp = 1  # Initialize the place value <br>
+    # Perform counting sort for every digit, starting from the least significant digit <br>
+	&nbsp;while max_num // exp > 0: <br>
+	&nbsp;&nbsp;counting_sort(arr, exp) <br>
+	&nbsp;&nbsp;exp *= 10 <br>
+
+def counting_sort(arr, exp): <br>
+&nbsp;n = len(arr) <br>
+&nbsp;output = [0] * n <br>
+&nbsp;count = [0] * 10 <br>
+
+    # Count occurrences of each digit at the current place value <br>
+    &nbsp;for i in range(n): <br>
+	&nbsp;&nbsp;index = arr[i] // exp <br>
+	&nbsp;&nbsp;count[index % 10] += 1 <br>
+    # Adjust count to represent the actual position of the digits in the output <br>
+    &nbsp;for i in range(1, 10): <br>
+	&nbsp;&nbsp;count[i] += count[i - 1] <br>
+    # Build the output array using the count array <br>
+    &nbsp;i = n - 1 <br>
+    &nbsp;while i >= 0: <br>
+	&nbsp;&nbsp;index = arr[i] // exp <br>
+	&nbsp;&nbsp;output[count[index % 10] - 1] = arr[i] <br>
+	&nbsp;&nbsp;count[index % 10] -= 1 <br>
+	&nbsp;&nbsp;i -= 1 <br>
+    # Copy the sorted elements back to the original array <br>
+    &nbsp;for i in range(n): <br>
+	&nbsp;&nbsp;arr[i] = output[i] <br>
+# Example Usage: <br>
+arr = [170, 45, 75, 90, 802, 24, 2, 66] <br>
+radix_sort(arr) <br>
+print("Sorted Array:", arr) <br>
+							</code> <br>
+							<p>This implementation uses counting sort as a subroutine to sort the array based on each digit's place value. 
+							The radix_sort function iterates through the digits, invoking counting sort for each place value until the entire array is sorted.</p> 
+							<header>
+								<h3><font color = "green">Advantages of Radix Sort:</font></h3>
+							</header>
+							<p><ol>
+								<li><b>Linear Time Complexity</b></li>
+								<p>Radix sort has a linear time complexity of O(nk), where n is the number of elements and k is the number of digits or characters. 
+									This makes it highly efficient for large datasets.</p>
+								<li><b>No Comparison Operations:</b></li>
+								<p>
+									Radix sort does not rely on element comparisons, which is a significant advantage in scenarios where comparison operations are expensive or impractical.
+								</p>
+								<li><b>Adaptability to Different Data Types:</b></li>
+								<p>Radix sort can be applied to various data types, such as integers, strings, or even custom data structures, as long as a consistent definition of the "digit" or "character" is provided.</p>
+							</ol></p>
+							<header>
+								<h3><font color = "green">Limitations and Considerations:</font></h3>
+							</header>
+							<p>
+								<ol>
+									<li><b>Space Complexity:</b></li>
+									<p>Radix sort may require additional space for the buckets, making it less memory-efficient compared to in-place sorting algorithms. 
+									However, its linear time complexity often compensates for this drawback.</p>
+									<li><b>Not Ideal for Variable-Length Data:</b></li>
+									<p>Radix sort assumes a fixed length for the elements being sorted. When dealing with variable-length data, additional preprocessing may be needed.</p>
+								</ol>
+							</p>
+							<p><a href="Lesson2.html"><button type = "button" class = "button button1">   <font color = "black">Next</font> </button>	</a>
+							<a href="PythonIntro.html"><button type = "button" class = "button button2">  <font color = "black">Back</font> </button>	</a></p>
+				<!--			
+					<boxleft>
+				
+						this is the testing text yada yada yada yada yada	
+						
+					</boxleft>
+					-->
+					</div>
+				</div>
+			</section>
+
+			<style>
+
+				
+				.button1
+				{
+					color: green;
+					background-color: lightgreen;
+					width: 170px;
+					float: right;
+					transform: translateY(670%);
+
+  					
+
+				}
+				
+				.button2
+				{
+					color: red;
+					background-color: lightsalmon;
+					float: left;
+					width: 170px;
+					transform: translateY(670%);
+				}
+
+			</style>
+
+
+<!-- This is the function for checking solutions-->
+<html>
+	<head>
+		<script>
+
+			function correctAnswer(color, state)
+			{
+				var element = document.getElementById("myForm");
+				element.style.backgroundColor = color;
+
+				var hint = document.getElementById("isCorrect");
+				hint.innerHTML = state;
+			}
+
+
+
+			function solutionCheck() {
+				var name =
+					document.forms.RegForm.Name.value;
+			
+			
+
+				if (name.toLowerCase() != "output") {
+					correctAnswer('salmon', "Incorrect");
+					//window.alert("Incorrect Please try again");
+					//name.focus();
+					return false;
+				}
+				else 
+				{
+					 correctAnswer('lightgreen', "Correct");
+					
+					// window.alert("Correct!");
+					// name.focus();
+					return false;
+					 
+				}
+				
+				//return true;
+			}
+		</script>
+
+
+		<style>
+			answerbox {
+				box-sizing: border-box;
+				width: 100%;
+				border: 100px solid black;
+				float: left;
+				align-content: center;
+				align-items: center;
+			}
+
+			form {
+				margin: 0 auto;
+				width: 600px;
+			}
+
+			boxleft 
+			{
+				background: ghostwhite;
+				width: 50px;
+				font-size: 20px;
+				padding: 10px;
+				border: 1px solid orangered;
+				margin: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+						<section>
+							<h3>BJC</h3>
+						</section>
+						<section>
+							<ul class="alt">
+								 <h4>Lessons </h4>
+								<li><a href="PythonIntro.html">Python Intro</a></li>
+                                <li><a href="Lesson1.html">Python Lesson 1</a></li>
+								<li><a href="Lesson2.html">Python Lesson 2</a></li>
+								<li><a href="Lesson3.html">Python Lesson 3</a></li>
+								<li><a href="Lesson4.html">Python Lesson 4</a></li>
+
+
+
+                                                               
+							</ul>
+						</section>
+						<section>
+							<h4>Follow Us!</h4>
+							<ul class="plain">
+								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                                                                <li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                                                                <li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+						&copy;<a href="https://www.freepik.com/free-photo/data-technology-blue-background-with-hacker-remixed-media_16016731.htm#query=computer%20programming%20background&position=13&from_view=keyword">Images from rawpixel.com</a>
+					   <br> <a href="https://templated.co/">@templatedco</a>
+						
+				</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+<!--Resources Used / Works sited
+
+https://www.freepik.com/free-photo/data-technology-blue-background-with-hacker-remixed-media_16016731.htm#query=computer%20programming%20background&position=13&from_view=keyword">Image by rawpixel.com</a> on Freepik
+
+Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+
+https://www.w3schools.com/howto/howto_js_filter_lists.asp
+https://www.geeksforgeeks.org/html-forms/
+
+
+-->
