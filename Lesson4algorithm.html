@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<!--
+Written for COMP 6620 by Team BJC-B 
+Wyatt LeMaster, Tyler Mathew McGlawn, Tyler McMculla, Krystal Lin
+11/30/22
+
+Github Pages - https://earpboy1064.github.io/earpboy.github.io/
+Github Repository - https://github.com/earpboy1064/earpboy.github.io
+Wyatt LeMaster is the owner of the repository.
+
+can visit above link to view site.
+
+Works cited and resources used at bottom of page.
+
+
+-->
+<html>
+	<head>
+		<title>Linear Search</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">Algorithm</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+						<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="JavaIntro.html">Learn Java</a></li>
+								<li><a href="C++Intro.html">Learn C++</a></li>
+							   
+						</ul>
+				</nav>
+ 					
+		<!-- Heading -->
+			<div id="heading" >
+				<h1>Understanding Linear Search - A Simple and Straightforward Search Algorithm</h1>
+			</div>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+						<header>
+							<h2><font color = "green">Introduction</font></h2>
+						</header>
+						<!--
+						<audio controls>
+							<Source src="./SoundRecordings/python4.ogg"  type = "audio/ogg"/>	
+							Your browser does not support audio	
+						</audio> -->
+						<p>
+							<br>
+							Linear search, also known as sequential search, is one of the simplest and most straightforward search algorithms. 
+							It is widely used for finding an element in a list by sequentially checking each element until a match is found or the entire list has been traversed. 
+							While linear search may not be the most efficient for large datasets, its simplicity and ease of implementation make it a valuable tool in various programming scenarios.
+</p>
+<header>
+	<h3><font color = "green">How Linear Search Works</font></h3>
+</header>
+<p>
+	<ol>
+		<li><b>Iterative Exploration</b></li>
+		<p>Linear search begins by starting at the first element of the list and sequentially checking each element until a match is found or the end of the list is reached.</p>
+		<li><b>Element Comparison</b></li>
+		<p>At each step, the algorithm compares the target element with the current element being examined. If a match is found, the search terminates, and the index of the matching element is returned.</p>
+		<li><b>Termination Condition</b></li>
+		<p>Linear search continues until either a match is found or the entire list has been traversed without finding the target element. In the latter case, the algorithm typically returns a signal (e.g., -1) to indicate that the element is not present in the list.</p>
+	</ol>
+</p>
+<header>
+	<h3><font color = "green">Pseudocode for Linear Search</font></h3>
+</header>
+<p>
+	<code>
+	linear_search(arr, target): <br>
+    &nbsp;for i from 0 to length of arr - 1: <br>
+	&nbsp;&nbsp;if arr[i] equals target: <br>
+	&nbsp;&nbsp;&nbsp; return i <br>
+ return -1  # Target not found <br>
+
+	</code>
+</p>
+
+<header>
+	<h3><font color = "green">Advantages of Linear Search</font></h3>
+</header>
+<p>
+	<ol>
+		<li><b>Simplicity</b></li>
+		<p>Linear search is one of the simplest search algorithms to understand and implement. Its straightforward nature makes it accessible for beginners and a quick solution for small datasets.</p>
+		<li><b>Applicability</b></li>
+		<p>Linear search can be applied to both sorted and unsorted lists, making it versatile in scenarios where the data may not be organized.</p>
+		<li><b>No Preprocessing</b></li>
+		<p>Unlike some search algorithms that require preprocessed data structures (e.g., binary search on sorted lists), linear search can be applied directly to the raw data without any preprocessing</p>
+	</ol>
+</p>
+
+<header>
+	<h3><font color = "green">Considerations and Limitations</font></h3>
+</header>
+<p>
+	<ol>
+		<li>
+			<b>Time Complexity</b>
+		</li>
+		<p>Linear search has a time complexity of O(n), where n is the size of the list. For large datasets, this linear time complexity may make it less suitable compared to more efficient search algorithms like binary search.</p>
+		<li><b>Not Ideal for Large Datasets </b></li>
+		<p>As the size of the dataset increases, the linear nature of the search can result in longer search times compared to algorithms with logarithmic time complexities.</p>
+	</ol>
+</p>
+
+<header>
+	<h3><font color = "green">Use Cases</font></h3>
+</header>
+<ol>
+	<li><b>Unordered Lists</b></li>
+	<p>Linear search is well-suited for searching elements in unordered lists or when the order of the data is not important.</p>
+	<li><b>Simple Implementations</b></li>
+	<p>When a quick and simple search algorithm is needed, especially for small datasets, linear search provides a straightforward solution.</p>
+</ol>
+<!-- ################   Below is the Question related html and javascript   ################
+							<br><br>
+							<h1 style="text-align: center;">Question</h1>
+							<br><br> <p style="text-align: center; font-size:larger;">Will the conditional <b><u>if</u></b> or <b><u>else</u></b> execute if the value for moneyOwed is 0</p>
+							
+-->
+							<p><a href="index.html"><button type = "button" class = "button button1">   <font color = "black">Home</font> </button>	</a>
+							<a href="Lesson3.html"><button type = "button" class = "button button2">  <font color = "black">Back</font> </button></a></p>
+			
+
+
+							<!-- This is the function for checking solutions 
+							<form name="RegForm" onsubmit="return solutionCheck()" method="post">
+						
+					<p>Answer: <input type="text" placeholder = "answer" id = "myForm" size="65" name="Name" /></p>
+					<p id="isCorrect"></p>
+						<br />
+						<button type = "submit">Submit</button>
+
+						<br><br><br><br><br><br><br><br> 
+ 
+						
+
+
+
+
+				
+					</div>
+				</div>
+			</section>
+		-->
+			<style>
+				.button1
+				{
+
+					color: green;
+					background-color: lightgreen;
+					width: 170px;
+					float: right;
+					transform: translateY(670%);
+				}
+
+				.button2
+				{
+					color: red;
+					background-color: lightsalmon;
+					float: left;
+					width: 170px;
+					transform: translateY(670%);
+				}
+
+			</style>
+
+
+<!-- This is the function for checking solutions-->
+			<html>
+				<head>
+					<script>
+
+						function correctAnswer(color, state)
+						{
+							var element = document.getElementById("myForm");
+							element.style.backgroundColor = color;
+
+							var hint = document.getElementById("isCorrect");
+							hint.innerHTML = state;
+						}
+
+
+
+						function solutionCheck() {
+							var name =
+								document.forms.RegForm.Name.value;
+						
+						
+			
+							if (name.toLowerCase() != "if") {
+								correctAnswer('salmon', "Incorrect");
+								//window.alert("Incorrect Please try again");
+								//name.focus();
+								return false;
+							}
+							else 
+							{
+								 correctAnswer('lightgreen', "Correct");
+								
+								// window.alert("Correct!");
+								// name.focus();
+								return false;
+								 
+							}
+							
+							//return true;
+						}
+					</script>
+			
+
+					<style>
+						answerbox {
+							box-sizing: border-box;
+							width: 100%;
+							border: 100px solid black;
+							float: left;
+							align-content: center;
+							align-items: center;
+						}
+			
+						form {
+							margin: 0 auto;
+							width: 600px;
+						}
+			
+						boxleft 
+						{
+							background: ghostwhite;
+							width: 50px;
+							font-size: 20px;
+							padding: 10px;
+							border: 1px solid orangered;
+							margin: 10px;
+						}
+					</style>
+				</head>
+			
+				<body>
+					
+			</html>
+			
+
+
+		<!-- Footer 
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+						<section>
+							<h3>BJC</h3>
+						</section>
+						<section>
+							<ul class="alt">
+								 <h4>Lessons </h4>
+								<li><a href="PythonIntro.html">Python Intro</a></li>
+                                <li><a href="Lesson1.html">Python Lesson 1</a></li>
+								<li><a href="Lesson2.html">Python Lesson 2</a></li>
+								<li><a href="Lesson3.html">Python Lesson 3</a></li>
+								<li><a href="Lesson4.html">Python Lesson 4</a></li>
+
+
+
+                                                               
+							</ul>
+						</section>
+						<section>
+							<h4>Follow Us!</h4>
+							<ul class="plain">
+								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                                                                <li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                                                                <li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+						&copy;<a href="https://www.freepik.com/free-photo/data-technology-blue-background-with-hacker-remixed-media_16016731.htm#query=computer%20programming%20background&position=13&from_view=keyword">Images from rawpixel.com</a>
+					   <br> <a href="https://templated.co/">@templatedco</a>
+						
+				</div>
+				</div>
+			</footer> -->
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+<!--Resources Used / Works sited
+
+https://www.freepik.com/free-photo/data-technology-blue-background-with-hacker-remixed-media_16016731.htm#query=computer%20programming%20background&position=13&from_view=keyword">Image by rawpixel.com</a> on Freepik
+
+Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+
+https://www.w3schools.com/howto/howto_js_filter_lists.asp
+https://www.geeksforgeeks.org/html-forms/
+
+
+-->
