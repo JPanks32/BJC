@@ -16,7 +16,7 @@ Works cited and resources used at bottom of page.
 -->
 <html>
 	<head>
-		<title>Python Lesson 4</title>
+		<title>Binary Search </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="" />
@@ -27,11 +27,13 @@ Works cited and resources used at bottom of page.
 
 		<!-- Header -->
 			<header id="header">
-				<a class="logo" href="index.html">Python</a>
+				<a class="logo" href="index.html">Algorithm</a>
 				<nav>
 					<a href="#menu">Menu</a>
 				</nav>
 			</header>
+
+			
 
 		<!-- Nav -->
 			<nav id="menu">
@@ -45,105 +47,141 @@ Works cited and resources used at bottom of page.
  					
 		<!-- Heading -->
 			<div id="heading" >
-				<h1>Conditional Statements</h1>
+				<h1>Unveiling the Elegance of Binary Search: A Divide and Conquer Algorithm </h1>
 			</div>
-
+			
 		<!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="inner">
 					<div class="content">
 						<header>
-							<h2><font color = "green">Lesson 4</font></h2>
+							<h2><font color = "green">Introduction:</font></h2>
 						</header>
-						<audio controls>
-							<Source src="./SoundRecordings/python4.ogg"  type = "audio/ogg"/>	
+
+
+						<!--<audio controls>
+							<Source src="./SoundRecordings/Python2.ogg"  type = "audio/ogg"/>	
 							Your browser does not support audio	
-						</audio>
+						</audio> -->
 						<p>
-							
-							<br>
-							The next important topic to learn is conditional statements. conditional statements allow the program to make a simple decision based on a defined reason. There exists several different ways 
-							to write conditional statement but for this example we will focus on the statements "if" and "else". We will use if and else to allow our interest calculator to tell the user if they have inputted 
-							incorrect values. The if statement will check to see if the value of the total accrued interest is greater then 0 and if it is not it will print an error message. The "else" will be used to signify what code should be run
-							if the total accrued interest is actually greater than 0. To begin we need to load up our previously written interest calculator.
-							
-							<br><code>interest = 0.0</code><br>
-							<code>moneyOwed = 0.0</code><br>
-							<code>timePassed = 0</code><br>
-							<br>
-							<code>print("Please type the interest percentage")</code><br>
-							<code>interest = float(input())</code><br>
-							<br>
-							<code>print("Please type the amount of money owed")</code><br>
-							<code>moneyOwed = float(input("$"))</code><br>
-							<br>
-							<code>print("please type the amount of time passed in months") </code><br>
-							<code>timePassed = int(input())</code><br>
-							<br>Now that we have all of the data we need we write the formula to calculate the interest.							
-							<br>
-							Dividing interest by 100 to convert to percentage:<br>
-							<code>interest = interest / 100</code><br>
-							<br>
-							calculating interest:<br>
-							<code>totalInterestAccrued = (interest * moneyOwed) * timePassed</code><br>
+Binary search is a powerful and efficient algorithm used to find the position of a target value within a sorted array. 
+Renowned for its simplicity and effectiveness, binary search operates by repeatedly dividing the search space in half, dramatically reducing the number of comparisons required to locate the desired element. 
+This algorithm's significance lies in its ability to quickly and systematically narrow down possibilities, making it a fundamental tool in computer science and information retrieval.
+</p>
+<header>
+	<h3><font color = "green">How Binary Search Works:</font></h3>
+</header>
+<p>
+	<ol>
+		<li><b>Basic Principle:</b></li>
+		<p>Binary search operates on the principle of divide and conquer. It begins by examining the middle element of the sorted array, comparing it to the target value.</p>
+		<li><b>Divide and Conquer Strategy:</b></li>
+		<p>If the middle element is equal to the target, the search is successful. Otherwise, if the target is less than the middle element, the algorithm narrows its focus to the lower half of the array. If the target is greater, the upper half becomes the new search space.</p>
+		<li><b>Recursive Approach:</b></li>
+		<p>Binary search can be implemented using recursion or iteration. In each step, the algorithm recursively searches the appropriate subarray, continually halving the search space until the target is found or the array is exhausted.</p>
+		<li><b>Efficiency and Time Complexity:</b></li>
+		<p>Binary search has a logarithmic time complexity of O(log n), where n is the number of elements in the array. This efficiency makes it significantly faster than linear search, especially for large datasets.</p>
+	</ol>
+</p>
+<header>
+	<h3><font color = "green"> Implementation in Python:</font></h3>
+</header>
+<p>
+	<code>def binary_search(arr, target):<br>
+		&nbsp;low, high = 0, len(arr) - 1<br>
+		&nbsp;while low <= high:<br>
+		&nbsp;&nbsp;mid = (low + high) // 2<br>
+		&nbsp;&nbsp;&nbsp;if arr[mid] == target:<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;	return mid  # Target found at index mid<br>
+		&nbsp;&nbsp;&nbsp;elif arr[mid] < target:<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;low = mid + 1<br>
+		&nbsp;&nbsp;&nbsp;else:<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;	high = mid - 1<br>
+		&nbsp;return -1  # Target not found<br>
+	</code>
+</p>
+<header>
+	<h3><font color = "green"> Key Considerations:</font></h3>
+</header>
+<p>
+	<ol>
+		<li>
+			<b>Precondition - Sorted Array:</b>
+		</li>
+		<p>Binary search requires a sorted array as a precondition. If the array is not sorted, it must be sorted first.</p>
+		<li><b>Applicability to Various Data Types:</b></li>
+		<p>While commonly used for searching in arrays, binary search can be adapted for use with other data structures, such as trees.</p>
+	</ol>
+</p>
+<header>
+	<h3><font color = "green"> Advantages and Use Cases:</font></h3>
+</header>
+<p>
+	<ol>
+		<li>
+			<b>Efficiency in Large Datasets:</b>
+		</li>
+		<p>Binary search excels when searching through large datasets, as its logarithmic time complexity ensures a rapid search process.</p>
+		<li><b>Resource Optimization:</b></li>
+		<p>
+			Binary search minimizes the number of comparisons needed to find a target, leading to optimal use of computational resources.
+		</p>
+		<li><b>Information Retrieval:</b></li>
+		<p>Binary search is widely used in databases, dictionaries, and information retrieval systems for quick and efficient searches.</p>
+	</ol>
+</p>
+<header>
+	<h3><font color = "green"> Limitations:</font></h3>
+</header>
+<p>
+	<ol>
+		<li><b>Sorted Array Requirement:</b></li>
+		<p>The array must be sorted before applying binary search, which may incur additional preprocessing time.</p>
+		<li><b>Inapplicability to Unordered Data:</b></li>
+		<p>Binary search is not suitable for unsorted data or dynamic datasets that frequently change.</p>
+	</ol>
+</p>
 
-							<br><br>Once we have the amount of interest accrued we can use the if statement to determine if the values entered by the user are valid
-							<br> We can see below that the if statement is checking if the total interest accrued is either less then or equal to 0.
-							<br> If it is then the following code will be run
-							<br><code>if totalInterestAccrued <= 0:</code>
-							<br><code> print("ERROR")</code>
-							<br><code> print("Please try running the program again with the correct values")</code>
-
-							<br><br>If the value for total interest accrued is not less than or equal to 0 then the code below the else will execute
-							<br><code>else:</code>
-							<br><code>print("The total interest accrued is $", totalInterestAccrued)</code>
-
-							
-							<br>We can now run our program and input the values for each variable. To check if the if statement is working you can type a 0 for any of the variable and you will see the printed error message.
-														
-
-<!-- ################   Below is the Question related html and javascript   ################-->
+<!-- ################   Below is the Question related html and javascript   ################
 							<br><br>
 							<h1 style="text-align: center;">Question</h1>
-							<br><br> <p style="text-align: center; font-size:larger;">Will the conditional <b><u>if</u></b> or <b><u>else</u></b> execute if the value for moneyOwed is 0</p>
+							<br> <p style="text-align: center; font-size:larger;">what would be the value of <b>number_three</b> if the first two variables had the values <b>5</b> and <b>9</b>?</p>
+-->
 							
-								
-							<p><a href="index.html"><button type = "button" class = "button button1">   <font color = "black">Home</font> </button>	</a>
-							<a href="Lesson3.html"><button type = "button" class = "button button2">  <font color = "black">Back</font> </button></a></p>
+							<p><a href="Lesson3.html"><button type = "button" class = "button button1">   <font color = "black">Next</font> </button>	</a>
+								<a href="Lesson1.html"><button type = "button" class = "button button2">  <font color = "black">Back</font> </button>	</a></p>
 			
 
-
-							<!-- This is the function for checking solutions-->
+							<!-- This is the function for checking solutions
 							<form name="RegForm" onsubmit="return solutionCheck()" method="post">
 						
-					<p>Answer: <input type="text" placeholder = "answer" id = "myForm" size="65" name="Name" /></p>
+					<p>Answer: <input type="text" placeholder = "Answer" id = "myForm" size="65" name="Name" /></p>
 					<p id="isCorrect"></p>
 						<br />
 						<button type = "submit">Submit</button>
 
 						<br><br><br><br><br><br><br><br> 
  
-						
-
-
 
 
 				
 					</div>
 				</div>
-			</section>
+			</section> -->
 
 			<style>
 				.button1
 				{
-
 					color: green;
 					background-color: lightgreen;
 					width: 170px;
 					float: right;
 					transform: translateY(670%);
-				}
 
+  					
+
+				}
+				
 				.button2
 				{
 					color: red;
@@ -152,7 +190,6 @@ Works cited and resources used at bottom of page.
 					width: 170px;
 					transform: translateY(670%);
 				}
-
 			</style>
 
 
@@ -178,7 +215,7 @@ Works cited and resources used at bottom of page.
 						
 						
 			
-							if (name.toLowerCase() != "if") {
+							if (name != "14") {
 								correctAnswer('salmon', "Incorrect");
 								//window.alert("Incorrect Please try again");
 								//name.focus();
@@ -229,10 +266,9 @@ Works cited and resources used at bottom of page.
 				<body>
 					
 			</html>
-			
+		
 
-
-		<!-- Footer -->
+		<!-- Footer 
 			<footer id="footer">
 				<div class="inner">
 					<div class="content">
@@ -268,7 +304,7 @@ Works cited and resources used at bottom of page.
 						
 				</div>
 				</div>
-			</footer>
+			</footer> -->
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+Written for COMP 6620 by Team BJC-B 
+Wyatt LeMaster, Tyler Mathew McGlawn, Tyler McMculla, Krystal Lin
+11/30/22
+
+Github Pages - https://earpboy1064.github.io/earpboy.github.io/
+Github Repository - https://github.com/earpboy1064/earpboy.github.io
+Wyatt LeMaster is the owner of the repository.
+
+You can visit the above link to view the site.
+
+Works cited and resources used at the bottom of the page.
+-->
+<html>
+	<head>
+		<title>Introduction to Algorithms</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<header id="header">
+			<a class="logo" href="index.html">Algorithms</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="PythonIntro.html">Learn Python</a></li>
+				<li><a href="C++Intro.html">Learn C++</a></li>
+			</ul>
+		</nav>
+
+		<!-- Heading -->
+		<div id="heading">
+			<h1>Overview of Sorting and Searching Algorithms</h1>
+		</div>
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<div class="content">
+					<header>
+						<h2><font color="green">Significance in Computer Science and Real-World Applications</font></h2>
+					</header>
+
+					<p>
+						Sorting and searching algorithms are foundational in computer science, addressing the crucial tasks of organizing data and efficiently locating specific information. These algorithms underpin various real-world applications, from information retrieval in databases to optimizing search functionality in web applications.
+					</p>
+
+                    <header>
+                        <h3><font color="green">Visual Introduction</font></h3>
+                    </header>
+                    <div style="position: relative; width: 50%; max-width: 400px; margin: 0;">
+                        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/ShT3lNRnS_c" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        Link – <a href="https://www.youtube.com/watch?v=ShT3lNRnS_c&list=PLWWFf_h_MQRpPvu24mBx006T17XsYXBLP" target="_blank">Visual Introduction Video</a>
+                    </p>
+                    
+                    <h3><font color="green">Radix Sort</font></h3>
+                    <p>
+                        Radix Sort is a non-comparative sorting algorithm that works by distributing elements into buckets according to their individual digits. It operates on integers or strings and is particularly efficient for large datasets.
+                    </p>
+                    <div style="text-align: left;">
+                        <img src="images/lessonimages/radix.png" alt="Bloom Filter Image" style="max-width: 25%; height: auto;">
+                    </div>
+                    
+
+					<h3><font color="green">Binary Search</font></h3>
+					<p>
+						Binary Search is a searching algorithm that efficiently locates a target element within a sorted dataset. It repeatedly divides the search space in half, narrowing down the possibilities until the target is found or determined to be absent.
+					</p>
+                    <div style="text-align: left;">
+                        <img src="images/lessonimages/Binary.png" alt="Bloom Filter Image" style="max-width: 25%; height: auto;">
+                    </div>
+
+                    <h3><font color="green">Bloom Filter</font></h3>
+                    <p>
+                        A Bloom Filter is a space-efficient probabilistic data structure used for membership testing. It determines whether an element is a member of a set, with a small probability of false positives.
+                    </p>
+                    <div style="text-align: left;">
+                        <img src="images/lessonimages/Bloom_filter.png" alt="Bloom Filter Image" style="max-width: 25%; height: auto;">
+                    </div>
+
+					<header>
+						<h3><font color="green">Time and Space Complexity Analysis</font></h3>
+					</header>
+
+					<p>
+						Explain the time and space complexity of the algorithms, focusing on how Radix Sort, Binary Search, and Bloom Filter perform in different scenarios. Use charts or graphics to provide a visual representation of their efficiency.
+						Link to Video Explanation - <a href="https://www.youtube.com/watch?v=8mBxpDWEKNw" target="_blank">Time and Space Complexity Video</a>
+					</p>
+
+<!-- 					<header>
+						<h3><font color="green">Interactive Development with Scratch - Number Guessing Game</font></h3>
+					</header>
+
+					<p>
+						<a href="https://bjc.edc.org/bjc-r/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" target="_blank">Number Guessing Game - Scratch</a>
+					</p> -->
+				</div>
+			</div>
+		</section>
+
+		<style>
+			.button2 {
+				color: red;
+				background-color: lightsalmon;
+				position: absolute;
+				top: 90%;
+				right: 70%;
+				width: 170px;
+				transform: translateY(-20%);
+			}
+		</style>
+
+		<!-- This is the function for checking solutions-->
+		<html>
+			<head>
+				<script>
+					function solutionCheck() {
+						var name = document.forms.RegForm.Name.value;
+
+						if (name !== "output") {
+							window.alert("Incorrect. Please try again");
+							name.focus();
+							return false;
+						} else {
+							window.alert("Correct!");
+							name.focus();
+							return true;
+						}
+
+						return true;
+					}
+				</script>
+
+				<style>
+					answerbox {
+						box-sizing: border-box;
+						width: 100%;
+						border: 100px solid black;
+						float: left;
+						align-content: center;
+						align-items: center;
+					}
+
+					form {
+						margin: 0 auto;
+						width: 600px;
+					}
+
+					boxleft {
+						background: ghostwhite;
+						width: 50px;
+						font-size: 20px;
+						padding: 10px;
+						border: 1px solid orangered;
+						margin: 10px;
+					}
+				</style>
+			</head>
+
+			<body>
+		</html>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<div class="content">
+					<section>
+						<h3>BJC</h3>
+					</section>
+					<section>
+						<ul class="alt">
+							<h4>Lessons </h4>
