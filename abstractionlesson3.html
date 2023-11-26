@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<!--
+Written for COMP 6620 by Team BJC-B 
+Wyatt LeMaster, Tyler Mathew McGlawn, Tyler McMculla, Krystal Lin
+11/30/22
+
+Github Pages - https://earpboy1064.github.io/earpboy.github.io/
+Github Repository - https://github.com/earpboy1064/earpboy.github.io
+Wyatt LeMaster is the owner of the repository.
+
+can visit above link to view site.
+
+Works cited and resources used at bottom of page.
+
+
+-->
+<html>
+	<head>
+		<title>Abstraction Lesson 3</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">Abstraction</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="PythonIntro.html">Learn Python</a></li>
+					<li><a href="C++Intro.html">Learn C++</a></li>
+                    <li><a href="algorithmintro.html">Learn Algorithms</a></li>
+				   
+			</ul>
+	</nav>
+		 
+
+		<!-- Heading -->
+			<div id="heading" >
+				<h1>Levels of Abstraction in Computer Science</h1>
+			</div>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+						<header>
+							<h3><font color = "green">Computer Science Abstraction Layers: Unveiling Complexity</font></h3>
+						</header>
+                        <p>
+                            In computer science, abstraction layers serve as a pivotal framework where each level builds upon the one beneath it, creating a comprehensive yet modular representation of information.
+                            Abstraction is a fundamental concept in computer science, often manifested through different levels or layers, each representing a distinct model of information and processes with varying levels of detail. This hierarchical structure allows for a systematic organization of complexity and a more manageable understanding of intricate systems.                           
+                        </p>
+						<!-- <audio controls>
+							<Source src="./SoundRecordings/Java1.ogg"  type = "audio/ogg"/>	
+							Your browser does not support audio	
+						</audio> -->
+                        <header>
+							<h3><font color = "green">Abstraction Levels in Database Systems</font></h3>
+						</header>
+						<p>
+                            Abstraction layers are also prevalent in database systems, catering to users with varying levels of familiarity with underlying data structures.
+                            <ul>
+                                <li>
+                                    <b>Physical Level: Delving into Data Storage</b>
+                                </li><p>The physical level describes the nitty-gritty details of how data is stored in the system, encompassing complex low-level data structures.</p>
+                             <li><b>Logical Level: What and How Data Relates</b></li>
+                             <p>The logical level abstracts the database by defining what data is stored and illustrating the relationships between different data elements. It achieves physical data independence, shielding users from underlying complexities.</p>
+                             <li><b>View Level: Simplifying User Interaction</b></li>
+                             <p>At the highest level, the view abstraction simplifies interaction by presenting only a portion of the entire database. Users can access tailored views, streamlining their engagement with the system.</p>   
+                            </ul>
+                            <header>
+                                <h3><font color = "green">Layered Architecture: Simplifying Design and Encouraging Collaboration</font></h3>
+                            </header> 
+                            <p>Layered architecture, a design technique, further reinforces the benefits of abstraction.</p>   
+                            <ul>
+                                <li><b>Simplified Design: Breaking Down Complexity</b></li>
+                                <p>The layered approach simplifies design by breaking down the system into manageable and isolated layers, facilitating a more systematic development process.</p>
+                                <li><b>Role-Specific Work: Effective Collaboration</b></li>
+                                <p>Different layers enable role-specific contributions, allowing designers, developers, and other stakeholders to work effectively at their respective levels of abstraction.</p>
+                                <li><b>Portability Support: Enhancing Flexibility</b></li>
+                                <p>A layered architecture supports software portability, allowing changes in one layer without disrupting others, promoting adaptability and flexibility.</p><br>
+                                <p>In summary, the concept of abstraction, manifested through various layers, is a cornerstone in computer science, providing a structured and comprehensible approach to handling complexity and designing sophisticated systems.</p>
+                            </ul>                      
+<p><a href="index.html"><button type = "button" class = "button button1">   <font color = "black">Home</font> </button>	</a>
+<a href="abstractionlesson2.html"><button type = "button" class = "button button2">  <font color = "black">Back</font> </button></a></p>				
+								<br><br><br><br><br><br><br><br> 
+			 
+						
+					</div>
+				</div>
+			</section>
+
+			<style>
+
+				
+				.button1
+				{
+					color: green;
+					background-color: lightgreen;
+					width: 170px;
+					float: right;
+					transform: translateY(670%);
+
+  					
+
+				}
+				
+				.button2
+				{
+					color: red;
+					background-color: lightsalmon;
+					float: left;
+					width: 170px;
+					transform: translateY(670%);
+				}
+
+			</style>
+
+
+<!-- This is the function for checking solutions-->
+<html>
+	<head>
+		<script>
+
+			function correctAnswer(color, state)
+			{
+				var element = document.getElementById("myForm");
+				element.style.backgroundColor = color;
+
+				var hint = document.getElementById("isCorrect");
+				hint.innerHTML = state;
+			}
+
+
+
+			function solutionCheck() {
+				var name =
+					document.forms.RegForm.Name.value;
+			
+			
+
+				if (name.toLowerCase() != "simplification") {
+					correctAnswer('salmon', "Incorrect");
+					//window.alert("Incorrect Please try again");
+					//name.focus();
+					return false;
+				}
+				else 
+				{
+					 correctAnswer('lightgreen', "Correct");
+					
+					// window.alert("Correct!");
+					// name.focus();
+					return false;
+					 
+				}
+				
+				//return true;
+			}
+		</script>
+
+
+		<style>
+			answerbox {
+				box-sizing: border-box;
+				width: 100%;
+				border: 100px solid black;
+				float: left;
+				align-content: center;
+				align-items: center;
+			}
+
+			form {
+				margin: 0 auto;
+				width: 600px;
+			}
+
+			boxleft 
+			{
+				background: ghostwhite;
+				width: 50px;
+				font-size: 20px;
+				padding: 10px;
+				border: 1px solid orangered;
+				margin: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+</html>
+
+
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+						<section>
+							<h3>BJC</h3>
+						</section>
+						<section>
+							<ul class="alt">
+								 <h4>Lessons </h4>
+								<li><a href="JavaIntro.html">Java Intro</a></li>
+                                <li><a href="Lesson1Java.html">Java Lesson 1</a></li>
+								<li><a href="Lesson2Java.html">Java Lesson 2</a></li>
+								<li><a href="Lesson3Java.html">Java Lesson 3</a></li>
+								<li><a href="Lesson4Java.html">Java Lesson 4</a></li>
+
+                         
+							</ul>
+						</section>
+						<section>
+							<h4>Follow Us!</h4>
+							<ul class="plain">
+								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                                                                <li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                                                                <li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+						&copy;<a href="https://www.freepik.com/free-photo/data-technology-blue-background-with-hacker-remixed-media_16016731.htm#query=computer%20programming%20background&position=13&from_view=keyword">Images from rawpixel.com</a>
+					   <br> <a href="https://templated.co/">@templatedco</a>
+						
+				</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+<!--Resources Used / Works sited
+
+https://www.freepik.com/free-photo/data-technology-blue-background-with-hacker-remixed-media_16016731.htm#query=computer%20programming%20background&position=13&from_view=keyword">Image by rawpixel.com</a> on Freepik
+
+Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+
+https://www.w3schools.com/howto/howto_js_filter_lists.asp
+https://www.geeksforgeeks.org/html-forms/
+
+
+-->

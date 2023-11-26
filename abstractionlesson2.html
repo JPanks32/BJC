@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<!--
+Written for COMP 6620 by Team BJC-B 
+Wyatt LeMaster, Tyler Mathew McGlawn, Tyler McMculla, Krystal Lin
+11/30/22
+
+Github Pages - https://earpboy1064.github.io/earpboy.github.io/
+Github Repository - https://github.com/earpboy1064/earpboy.github.io
+Wyatt LeMaster is the owner of the repository.
+
+can visit above link to view site.
+
+Works cited and resources used at bottom of page.
+
+
+-->
+<html>
+	<head>
+		<title>Abstraction Lesson 2 </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">Abstraction</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="PythonIntro.html">Learn Python</a></li>
+					<li><a href="C++Intro.html">Learn C++</a></li>
+				    <li><a href="algorithmintro.html">Learn Algorithms</a></li>
+			</ul>
+	</nav>
+		<!-- Heading -->
+			<div id="heading" >
+				<h1>Abstraction in Object-Oriented Programming</h1>
+			</div>
+			
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+						<header>
+							<h2><font color = "green">Key Aspects of Abstraction in Object-Oriented Programming (OOP) </font></h2>
+						</header>
+
+						<!-- <audio controls>
+							<Source src="./SoundRecordings/JavaIntro.ogg"  type = "audio/ogg"/>	
+							Your browser does not support audio	
+						</audio> -->
+						<p>
+                            In the realm of object-oriented programming (OOP) theory, abstraction is a key concept that allows the definition of objects representing abstract "actors" capable of performing tasks, changing their state, and interacting with other objects in the system. Abstraction involves encapsulating state details, associating behavior strongly with data, and standardizing interactions between different data types. Two crucial aspects of abstraction in OOP are polymorphism and delegation or inheritance.
+						</p>
+                        <header>
+							<h3><font color = "green">Polymorphism</font></h3>
+						</header> 
+                        <p>
+                            Polymorphism occurs when abstraction extends into the operations defined, enabling objects of different types to be substituted. This facilitates flexibility in programming by allowing the interchangeability of different types in similar roles.
+                        </p>                       
+                        <header>
+							<h3><font color = "green">Delegation or Inheritance</font></h3>
+						</header>
+                        <p>
+                            Abstraction in the opposite direction, within types or classes, involves structuring them to simplify complex relationships. Delegation or inheritance is a manifestation of this aspect of abstraction, where classes are organized to enhance code clarity and maintainability.
+                        </p>
+                        <header>
+							<h3><font color = "green">Object-Oriented Programming Languages and Abstraction</font></h3>
+						</header>
+                        <p>
+                            Different object-oriented programming languages provide facilities for abstraction, supporting a general strategy of polymorphism. Examples include C++, Object Pascal, and Java. While languages like Common Lisp Object System or Self rely on delegation for polymorphism, C++ heavily employs templates and overloading for static bindings at compile-time.
+                        </p>
+                        <header>
+							<h3><font color = "green">Example in Java</font></h3>
+						</header>
+                        <p>Consider a simple Java code fragment representing farm animals at an abstract level suitable for modeling hunger and feeding:</p>
+                        <code>
+                            public class Animal extends LivingThing { <br>
+                                private Location loc; <br>
+                                private double energyReserves; <br>
+                                public boolean isHungry() { <br>
+                                    return energyReserves < 2.5; <br>
+                                } <br>
+                                public void eat(Food food) { <br>
+                                    // Consume food <br>
+                                    energyReserves += food.getCalories(); <br>
+                                } <br>
+                                public void moveTo(Location location) { <br>
+                                    // Move to new location <br>
+                                    this.loc = location; <br>
+                                } <br>
+                           } <br>
+                        </code>
+                        <p>
+                            In this example, the class 'Animal' serves as an abstraction used in place of an actual animal, showcasing the concept of abstraction in OOP.
+                        </p>
+                        <header>
+							<h3><font color = "green">Object-Oriented Design and Abstraction</font></h3>
+						</header>
+                        <p>
+                            Object-oriented design involves making decisions about what to abstract and what to keep under the control of the coder. This process, coupled with domain analysis and legacy analysis, helps determine relevant relationships in the real world. Object-oriented analysis, expressed within project constraints, leads to object-oriented design, defining how abstractions will be implemented.
+                        </p>
+                        <header>
+							<h3><font color = "green">Considerations in Abstraction</font></h3>
+						</header>
+                        <p>
+                            In the context of formal semantics, formal methods, or abstract interpretation, abstraction refers to considering a less detailed but safe definition of observed program behaviors. Exact or faithful abstractions provide answers about properties equally well on concrete and abstract models. Abstractions should be sound, allowing for sound answers, even if the result is undecidability.<br>
+                            Abstraction is a fundamental concept in object-oriented programming, influencing language design, code structure, and overall system architecture. Its application enhances flexibility, code clarity, and the ability to model real-world scenarios effectively. The level of abstraction in a programming language impacts its usability, with trade-offs between abstraction and other design characteristics. In the complex realm of computer programs, abstraction proves indispensable for dealing with undecidable properties and facilitating automatic methods for deriving information on program behavior.
+                        </p>
+                        <br><br><br><br>
+							<a href="abstractionlesson3.html"><button class = "button button1">   <font color = "black">Next</font></button>	</a> 
+							<a href="abstractionlesson1.html"><button class = "button button2">  <font color = "black">Back</font></button></a> 	
+
+
+
+
+				<!--			
+					<boxleft>
+				
+						this is the testing text yada yada yada yada yada	
+						
+					</boxleft>
+					-->
+					</div>
+				</div>
+			</section>
+
+			<style>
+				.button1
+				{
+					color: green;
+					background-color: lightgreen;
+					position: absolute;
+  					top:90%;
+ 					right: 25%;
+  					width: 170px;
+  					transform: translateY(-20%);
+
+				}
+
+				.button2
+				{
+					color: red;
+					background-color: lightsalmon;
+					position: absolute;
+  					top:90%;
+ 					right: 70%;
+  					width: 170px;
+  					transform: translateY(-20%);
+
+				}
+
+			</style>
+
+
+<!-- This is the function for checking solutions-->
+			<html>
+				<head>
+					<script>
+						function solutionCheck() {
+							var name =
+								document.forms.RegForm.Name.value;
+						
+						
+			
+							if (name != "output") {
+								window.alert("Incorrect Please try again");
+								name.focus();
+								return false;
+							}
+							else 
+							{
+								window.alert("Correct!");
+								name.focus();
+								return true;
+							}
+							
+							return true;
+						}
+					</script>
+			
+
+					<style>
+						answerbox {
+							box-sizing: border-box;
+							width: 100%;
+							border: 100px solid black;
+							float: left;
+							align-content: center;
+							align-items: center;
+						}
+			
+						form {
+							margin: 0 auto;
+							width: 600px;
+						}
+			
+						boxleft 
+						{
+							background: ghostwhite;
+							width: 50px;
+							font-size: 20px;
+							padding: 10px;
+							border: 1px solid orangered;
+							margin: 10px;
+						}
+					</style>
+				</head>
+			
+				<body>
+					
+			</html>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+						<section>
+							<h3>BJC</h3>
+						</section>
+						<section>
+							<ul class="alt">
+								 <h4>Lessons </h4>
+								<li><a href="JavaIntro.html">Java Intro</a></li>
+                                <li><a href="Lesson1Java.html">Java Lesson 1</a></li>
+								<li><a href="Lesson2Java.html">Java Lesson 2</a></li>
+								<li><a href="Lesson3Java.html">Java Lesson 3</a></li>
+								<li><a href="Lesson4Java.html">Java Lesson 4</a></li>
+
+                         
+							</ul>
+						</section>
+						<section>
+							<h4>Follow Us!</h4>
+							<ul class="plain">
+								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                                                                <li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                                                                <li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+						&copy;<a href="https://www.freepik.com/free-photo/data-technology-blue-background-with-hacker-remixed-media_16016731.htm#query=computer%20programming%20background&position=13&from_view=keyword">Images from rawpixel.com</a>
+					   <br> <a href="https://templated.co/">@templatedco</a>
+						
+				</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+<!--Resources Used / Works sited
+
+https://www.freepik.com/free-photo/data-technology-blue-background-with-hacker-remixed-media_16016731.htm#query=computer%20programming%20background&position=13&from_view=keyword">Image by rawpixel.com</a> on Freepik
+
+Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+
+https://www.w3schools.com/howto/howto_js_filter_lists.asp
+https://www.geeksforgeeks.org/html-forms/
+
+
+-->
