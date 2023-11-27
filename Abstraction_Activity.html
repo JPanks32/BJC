@@ -149,13 +149,14 @@ INDEX
 							 
 							 By this point, your code should loke somewhat similar to this: 
 							 <br>
-							 <button onclick="toggle(this)">Hide picture</button>
+							 <button onclick="toggle(this)">Hide Code</button>
+							 <br>
 							<picture hidden id="mypicture">
-								<img src="images/lessonimages/abstraction_code_1.png" width=100% height=100%>
+								<img src="images/lessonimages/abstraction_code_1.png" width=75% height=75%>
 							  </picture>
 							  
 							  <br /><br />
-							  
+							
 							  
 							  <script>
 								let toggle = button => {
@@ -164,111 +165,114 @@ INDEX
 								  
 								  if (hidden) {
 									 element.removeAttribute("hidden");
-									 button.innerText = "Hide picture";
+									 button.innerText = "Hide Code";
 								  } else {
 									 element.setAttribute("hidden", "hidden");
-									 button.innerText = "Show picture";
+									 button.innerText = "Show Code";
 								  }
 								}
 							  </script>
-							<h3><b>Example Maze</b></h3>
-							<div class="image">
-								<img src="images/lessonimages/Recursive_Act_Unsolved_Maze.png" alt="" 
-								height=50%
-								width=50%/>
-								<br>
-							
-							To make this activity simpler, no maze will have any loops. Because of this, we can derive the 
-							optimal path from any valid solution. To find a solution, we used the "follow the left wall" maze strategy.
-							That is, it will move through the maze, and at every fork, it will always choose to turn left if it can. If it can't, 
-							then it will try to go straight, then right if it fails, then finally backwards if it is the only option.
-							Because there are no loops, it will always find the finish eventually. As it moves
-							through the maze, it will keep track of all decisions so that we can reduce it later.
 
-								<h3><b>Mapped Maze</b></h3>
-							<div class="image">
-								<img src="images/lessonimages/Recursive_Act_Mapped_Maze.png" alt="" 
-								height=50%
-								width=50%/>
-								<br>
+							Now, while the code does work at this point, it takes a bit of effort to understand, and it is not as
+							 clean as it could be. This is where procedural abstraction comes in. In other words, we will be creating our
+							 own functions (blocks). To create a block, all you need to do is to navigate to the "My Blocks" section of the block
+							 choices and click on "Make a Block". To dictate what that block does, you simply connect code to it
+							 in a similar fashion as you would do for control blocks. First, I want you to create two new blocks:
+							 "Make Teams" and "Play Game", such that you are able to reduce your main code to something like this:
+							 <br>
 
+							 <img src="images/lessonimages/abstraction_procedural_1.png" width=50% height=50%>
+
+							 <br><br>
+
+							 If you have correctly defined the blocks by moving the relevent code to each, it should be similar to this:
+
+							 <br>
+							 <button onclick="toggle2(this)">Hide Code</button>
+							 <br>
+							<picture hidden id="mypicture2">
+								<img src="images/lessonimages/abstraction_procedural_2.png" width=75% height=75%>
+							  </picture>
 							  
-							As we are testing your ability
-							to implement a recursive algorithm, and not your knowledge of maze solving, we give you all possible 
-							optimizations for three sequential movements:
-
-							<ul>
-								<li>Left -> Back -> Right = Back</li>
-								<li>Left -> Back -> Straight = Right</li>
-								<li>Right -> Back -> Left = Back</li>
-								<li>Straight -> Back -> Left = Right</li>
-								<li>Straight -> Back -> Straight = Back</li>
-								<li>Left -> Back -> Left = Straight</li>
-							  </ul>  
-
+							  <br /><br />
 							
-							<h3><b>optiMAZE Block</b></h3>
-							<div class="image">
-								<img src="images/lessonimages/Recursive_Act_optiMAZE_block.png" alt="" 
-								height=20%
-								width=20%/>
-								<br>
+							  
+							  <script>
+								let toggle2 = button => {
+								  let element = document.getElementById("mypicture2");
+								  let hidden = element.getAttribute("hidden");
+								  
+								  if (hidden) {
+									 element.removeAttribute("hidden");
+									 button.innerText = "Hide Code";
+								  } else {
+									 element.setAttribute("hidden", "hidden");
+									 button.innerText = "Show Code";
+								  }
+								}
+							  </script>
 
-							What you will be doing in this activity is taking the long path that was mapped, and 
-							create a recursive algorithm to reduce it to the optimal path. You will do this by completing the optiMAZE block in the 
-							Mouse Sprite. We provided 4 different difficulty levels: 
+							<br><br>
+							While this is better, it can still be simplified a good deal. For the final two steps, I would like for you to:
+							<br>
+							1: Simplify the "play game" block to a single for loop containing two newly created blocks, "Player Movement"
+							 and "Check Collision". 
+							<br>
+							2: Reduce the "Check Collision" block to a single if statement. 
+							<br>    Hint1: Use the Use the "next costume" block in place of the "switch costume" block.
+							<br>    Hint2: Use a combination of the "and" and "or" operatiors to acheive a single if statement.
 							
-							<ul>
-								<li>Easy: Already optimizes the path once. You need to make it repeatedly 
-									optimize it until it stops improving</li>
-								<li>Medium: Tests the first three moves for a possible reduction (see list ablove).
-									You need to test every sequence of three moves in the path for possible reduction
-									then repeat the entire thing until it no longer shortens the path</li>
-								<li>Hard: Tests the first three moves for a possible reduction of Left -> Back -> Right = Back.
-									You need to test for every possible reduction (see list ablove) for every sequence of three moves in the path,
-									then repeat the entire thing until it no longer shortens the path</li>
-								<li>Insane: optiMAZE is empty. You will need to implement the entire block yourself.</li>
-							</ul>
+							<br><br>
+
+							Once you complete this, you have successfully used procedural abstraction to simplify your origional bulky
+							code into:
+							<br>
+							<img src="images/lessonimages/abstraction_procedural_3.png" width=75% height=75%>
+							<br>
+
+							With the totality of the code looking like this:
+
+							<br>
+							 <button onclick="toggle3(this)">Hide Code</button>
+							 <br>
+							<picture hidden id="mypicture3">
+								<img src="images/lessonimages/abstraction_procedural_5.png" width=100% height=100%>
+							  </picture>
+							  
+							  <br /><br />
 							
+							  
+							  <script>
+								let toggle3 = button => {
+								  let element = document.getElementById("mypicture3");
+								  let hidden = element.getAttribute("hidden");
+								  
+								  if (hidden) {
+									 element.removeAttribute("hidden");
+									 button.innerText = "Hide Code";
+								  } else {
+									 element.setAttribute("hidden", "hidden");
+									 button.innerText = "Show Code";
+								  }
+								}
+							  </script>
 							
-
-
-
-								<h3><b>Name your project and click create</b></h3>
-							<div class="image">
-								<img src="images/lessonimages/Recursive_Act_Solved_Maze.png" alt="" 
-								height=50%
-								width=50%/>
-								<br>
-
-
-								<a href="https://scratch.mit.edu/projects/924140383/editor/" target="_blank" >	<button class = "button button_lvl1">   <font color = "black">Easy</font> </button>	</a>
-								<a href="https://scratch.mit.edu/projects/924539232/editor/" target="_blank">	<button class = "button button_lvl2">   <font color = "black">Medium</font> </button>	</a>
-								<a href="https://scratch.mit.edu/projects/924539790/editor/" target="_blank">	<button class = "button button_lvl3">   <font color = "black">Hard</font> </button>	</a>
-								<a href="https://scratch.mit.edu/projects/924540289/editor/" target="_blank">	<button class = "button button_lvl4">   <font color = "black">Insane</font> </button>	</a>
-
-							</br>
-								
-							 
+							<br><br><br><br>
 							
-
-									
-
-
-
-
-
-
-
-
-
-							
-							<br><br><br><br><br><br>
-							
- 
-							
-							<a href="index.html"> <button class = "button button2">  <font color = "black">Back</font> </button>	</a>
-
+							Congradulations! You have completed the abstraction activity. Looking at your new code, it should be fairly clear that
+							 it is easier to understand, and thus modify/fix, than the origional code. It also has the benefit of reusability of the defined
+							 methods. Now, before you leave, look back at the code. Notice How
+							 the movement speed, turning radius, and turn sizes are all defined by variables instead of being hard coded
+							 as integers? This is another form of abstraction. It allows for centralized management of the code.
+							 For some extra fun, I have implmented an interface (another form of abstraction) that will allow you to play around
+							 with the variables "Team Size", "Turning Radius", and "Speed" with a slider so that you can see the benefits of using
+							 variables in this manner.
+							<br><br>
+							 <iframe src="https://scratch.mit.edu/projects/931291631/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+							<br><br>
+							<p><a href="index.html"><button type = "button" class = "button button1">   <font color = "black">Home</font> </button>	</a>
+							<a href="abstractionlesson3.html"> <button class = "button button2">  <font color = "black">Back</font> </button>	</a>
+							<br><br>
 
 
 
@@ -288,24 +292,21 @@ INDEX
 				{
 					color: green;
 					background-color: lightgreen;
-					position: absolute;
-  					top:90%;
- 					right: 20%;
-  					width: 120px;
-  					transform: translateY(-20%);
+					width: 170px;
+					float: right;
+					transform: translateY(-20%);
+
+  					
 
 				}
-
+				
 				.button2
 				{
 					color: red;
 					background-color: lightsalmon;
-					position: absolute;
-  					top:90%;
- 					right: 70%;
-  					width: 120px;
-  					transform: translateY(-20%);
-
+					float: left;
+					width: 170px;
+					transform: translateY(-20%);
 				}
 
 				.button_lvl1
