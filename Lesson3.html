@@ -16,7 +16,7 @@ Works cited and resources used at bottom of page.
 -->
 <html>
 	<head>
-		<title>Linear Search</title>
+		<title>Python Lesson 3</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="" />
@@ -27,7 +27,7 @@ Works cited and resources used at bottom of page.
 
 		<!-- Header -->
 			<header id="header">
-				<a class="logo" href="index.html">Algorithm</a>
+				<a class="logo" href="index.html">Python</a>
 				<nav>
 					<a href="#menu">Menu</a>
 				</nav>
@@ -45,7 +45,7 @@ Works cited and resources used at bottom of page.
  					
 		<!-- Heading -->
 			<div id="heading" >
-				<h1>Understanding Linear Search - A Simple and Straightforward Search Algorithm</h1>
+				<h1>Interest Calculator</h1>
 			</div>
 
 		<!-- Main -->
@@ -53,96 +53,65 @@ Works cited and resources used at bottom of page.
 				<div class="inner">
 					<div class="content">
 						<header>
-							<h2><font color = "green">Introduction</font></h2>
+							<h2><font color = "green">Lesson 3</font></h2>
 						</header>
-						<!--
 						<audio controls>
-							<Source src="./SoundRecordings/python4.ogg"  type = "audio/ogg"/>	
+							<Source src="./SoundRecordings/Python3.ogg"  type = "audio/ogg"/>	
 							Your browser does not support audio	
-						</audio> -->
+						</audio>
 						<p>
+							
 							<br>
-							Linear search, also known as sequential search, is one of the simplest and most straightforward search algorithms. 
-							It is widely used for finding an element in a list by sequentially checking each element until a match is found or the entire list has been traversed. 
-							While linear search may not be the most efficient for large datasets, its simplicity and ease of implementation make it a valuable tool in various programming scenarios.
-</p>
-<header>
-	<h3><font color = "green">How Linear Search Works</font></h3>
-</header>
-<p>
-	<ol>
-		<li><b>Iterative Exploration</b></li>
-		<p>Linear search begins by starting at the first element of the list and sequentially checking each element until a match is found or the end of the list is reached.</p>
-		<li><b>Element Comparison</b></li>
-		<p>At each step, the algorithm compares the target element with the current element being examined. If a match is found, the search terminates, and the index of the matching element is returned.</p>
-		<li><b>Termination Condition</b></li>
-		<p>Linear search continues until either a match is found or the entire list has been traversed without finding the target element. In the latter case, the algorithm typically returns a signal (e.g., -1) to indicate that the element is not present in the list.</p>
-	</ol>
-</p>
-<header>
-	<h3><font color = "green">Pseudocode for Linear Search</font></h3>
-</header>
-<p>
-	<code>
-	linear_search(arr, target): <br>
-    &nbsp;for i from 0 to length of arr - 1: <br>
-	&nbsp;&nbsp;if arr[i] equals target: <br>
-	&nbsp;&nbsp;&nbsp; return i <br>
- return -1  # Target not found <br>
+							Variables are a very important concept to understand, 
+							and that is why will write a small program using several different types of variables to further 
+							help us learn how they work and to improve our comfort with them. <br><br>
+							We will write a simple interest calculator that will print the amount of interest generated over a period of time.
+							I encourage you to go off and try this yourself first and then come back to this lesson to see how close you were able to get.
+							<br><br>
+							first thing we will do is create a variable to hold the interest amount. We will then need the user to input the amount of money and the total time that has passed in order for us to calculate the interest.
+							
+							<br><code>interest = 0.0</code><br>
+							<code>moneyOwed = 0.0</code><br>
+							<code>timePassed = 0</code><br>
+							<br>
+							<code>print("Please type the interest percentage")</code><br>
+							<code>interest = float(input())</code><br>
+							<br>
+							<code>print("Please type the amount of money owed")</code><br>
+							<code>moneyOwed = float(input("$"))</code><br>
+							<br>
+							<code>print("please type the amount of time passed in months") </code><br>
+							<code>timePassed = int(input())</code><br>
+							<br>Now that we have all of the data we need we write the formula to calculate the interest.							
+							<br>
+							Dividing interest by 100 to convert to percentage:<br>
+							<code>interest = interest / 100</code><br>
+							<br>
+							calculating interest:<br>
+							<code>totalInterestAccrued = (interest * moneyOwed) * timePassed</code><br>
 
-	</code>
-</p>
+							Once we have the amount of interest accrued, we can print it so the user can see the amount of interest owed.
+							<br><code>print("The total interest accrued is $", totalInterestAccrued)</code>
 
-<header>
-	<h3><font color = "green">Advantages of Linear Search</font></h3>
-</header>
-<p>
-	<ol>
-		<li><b>Simplicity</b></li>
-		<p>Linear search is one of the simplest search algorithms to understand and implement. Its straightforward nature makes it accessible for beginners and a quick solution for small datasets.</p>
-		<li><b>Applicability</b></li>
-		<p>Linear search can be applied to both sorted and unsorted lists, making it versatile in scenarios where the data may not be organized.</p>
-		<li><b>No Preprocessing</b></li>
-		<p>Unlike some search algorithms that require preprocessed data structures (e.g., binary search on sorted lists), linear search can be applied directly to the raw data without any preprocessing</p>
-	</ol>
-</p>
+							
+							<br><br>We can now run our program and input the values for each variable as if we were the intended user.
+							
 
-<header>
-	<h3><font color = "green">Considerations and Limitations</font></h3>
-</header>
-<p>
-	<ol>
-		<li>
-			<b>Time Complexity</b>
-		</li>
-		<p>Linear search has a time complexity of O(n), where n is the size of the list. For large datasets, this linear time complexity may make it less suitable compared to more efficient search algorithms like binary search.</p>
-		<li><b>Not Ideal for Large Datasets </b></li>
-		<p>As the size of the dataset increases, the linear nature of the search can result in longer search times compared to algorithms with logarithmic time complexities.</p>
-	</ol>
-</p>
+								<br><br>With the completion of this program, you have written your first real program!
+							
 
-<header>
-	<h3><font color = "green">Use Cases</font></h3>
-</header>
-<ol>
-	<li><b>Unordered Lists</b></li>
-	<p>Linear search is well-suited for searching elements in unordered lists or when the order of the data is not important.</p>
-	<li><b>Simple Implementations</b></li>
-	<p>When a quick and simple search algorithm is needed, especially for small datasets, linear search provides a straightforward solution.</p>
-</ol>
-<!-- ################   Below is the Question related html and javascript   ################
+<!-- ################   Below is the Question related html and javascript   ################-->
 							<br><br>
 							<h1 style="text-align: center;">Question</h1>
-							<br><br> <p style="text-align: center; font-size:larger;">Will the conditional <b><u>if</u></b> or <b><u>else</u></b> execute if the value for moneyOwed is 0</p>
+							<br><br> <p style="text-align: center; font-size:larger;"> What is the variable type of the variable <b>totalInterestAccrued</b>?</p>
 							
--->
-<br><br>							
-							<p><a href="Algorithms_Recursive_Activity.html"><button type = "button" class = "button button1">   <font color = "black">Activity</font> </button>	</a>
-							<a href="Lesson3algorithm.html"><button type = "button" class = "button button2">  <font color = "black">Back</font> </button></a></p>
+								
+							<p><a href="Lesson4.html"><button type = "button" class = "button button1">   <font color = "black">Next</font> </button>	</a>
+							<a href="Lesson2.html"><button type = "button" class = "button button2">  <font color = "black">Back</font> </button></a></p>
 			
 
 
-							<!-- This is the function for checking solutions 
+							<!-- This is the function for checking solutions-->
 							<form name="RegForm" onsubmit="return solutionCheck()" method="post">
 						
 					<p>Answer: <input type="text" placeholder = "answer" id = "myForm" size="65" name="Name" /></p>
@@ -161,27 +130,25 @@ Works cited and resources used at bottom of page.
 					</div>
 				</div>
 			</section>
-		-->
+
 			<style>
 				.button1
 				{
+
 					color: green;
 					background-color: lightgreen;
 					width: 170px;
 					float: right;
-					transform: translateY(-70%);
-
-  					
-
+					transform: translateY(670%);
 				}
-				
+
 				.button2
 				{
 					color: red;
 					background-color: lightsalmon;
 					float: left;
 					width: 170px;
-					transform: translateY(-70%);
+					transform: translateY(670%);
 				}
 
 			</style>
@@ -209,7 +176,7 @@ Works cited and resources used at bottom of page.
 						
 						
 			
-							if (name.toLowerCase() != "if") {
+							if (name.toLowerCase() != "float") {
 								correctAnswer('salmon', "Incorrect");
 								//window.alert("Incorrect Please try again");
 								//name.focus();
@@ -261,9 +228,7 @@ Works cited and resources used at bottom of page.
 					
 			</html>
 			
-
-
-		<!-- Footer 
+		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
 					<div class="content">
@@ -299,7 +264,7 @@ Works cited and resources used at bottom of page.
 						
 				</div>
 				</div>
-			</footer> -->
+			</footer>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

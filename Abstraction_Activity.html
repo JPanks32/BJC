@@ -1,0 +1,511 @@
+<!DOCTYPE HTML>
+<!--
+Written for COMP 6620 by Team BJC-B 
+Wyatt LeMaster, Tyler Mathew McGlawn, Tyler McMculla, Krystal Lin
+11/30/22
+
+Github Pages - https://earpboy1064.github.io/earpboy.github.io/
+Github Repository - https://github.com/earpboy1064/earpboy.github.io
+Wyatt LeMaster is the owner of the repository.
+
+can visit above link to view site.
+
+Works cited and resources used at bottom of page.
+
+INDEX
+-->
+
+<html>
+	<head>
+		<title>Abstraction Activity</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">C++</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="PythonIntro.html">Learn Python</a></li>
+					<li><a href="JavaIntro.html">Learn Java</a></li>
+				   
+			</ul>
+	</nav>
+		<!-- Heading -->
+			<div id="heading" >
+				<h1>Abstraction Activity</h1>
+			</div>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+						<header>
+							<h2><font color = "green">Rock Paper Scissors Tournament: Abstraction Activity </font></h2>
+						</header>
+
+						<br><br><br>
+						For our abstraction activity, we will be working on a project in Scratch. Scratch is a
+						 high level, free to use block-based programming language created with javascript. As a block based programming language, it
+						 already utilizes a large degree of abstraction. For example, each Scratch project consists of one or more "Sprites",
+						 each of which have their own space for the programmer to add code. Each individuak "Block" of code is an 
+						 abstraction of the javascript code that carries out the function. For example, the 
+						 
+						 <img src="images/lessonimages/move_block.png" width=10% height=10%>
+							
+						block tells the "Sprite" to move a certain number of steps. Simple, right? Well, looking deeper, the "move" block 
+						 is an abstraction of several lines of javascript code that remove the image of the sprite from the screen, and
+						 replaces it in the new location. Those Javascript lines are themselves abstractions of the base machine language 
+						 that computers run on into something easier for humans to read and understand.
+						 
+						<br><br>
+						For this project, will be creating a sort of rock-papper-scissors battle royal, in which a set number of rock,
+						 papper, and scissor sprites "battle" eachother, and the loser becomes the winning type. The winner will be
+						 determined by traditional rock-papper-scissors rules, thus rock cruches scissors, scissors cut paper, and paper
+						 covers rock. Bellow, I have a working example so you know what you are working towards: 
+						 <br>
+							<body>
+								<iframe src="https://scratch.mit.edu/projects/924530060/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+							</body>
+						<p>
+							
+							<br><br><br>
+							
+							This project will be divided into two parts: to create a working project, and to use abstraction
+							 to make the code as simple and easy to understand as possible. A sample code has been provided for you
+							 to work on here:
+							<br>
+							 <body>
+								<iframe src="https://scratch.mit.edu/projects/930705773/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+							</body>
+							 
+							 <br>
+
+							 <a href="https://scratch.mit.edu/projects/930705773/editor/" target="_blank" >	<button class = "button button_lvl1">   <font color = "black">Code</font> </button>	</a>
+							 <br> <br>
+
+
+							 <h3><b>Phase 1: Encapsulation</b></h3>
+							 <br>
+							 As you can see, while several "clones" of the origional sprite are created, only the origional is moving. While we can
+							 just copy/paste the first sprite and remove the clone generation to have a working game, that is both wasteful of space, and hard to edit.
+							 After all, if you made a mistake, you would have to fix it 15 times, and if you missed one, you would have to hunt through
+							 all of them to find it. Thus, abstraction. Having all of the code in one class (sprite) with multiple instances
+							 of itself (clones) instead of duplicating the code many times for the same effect is an example of Encapsulation.
+
+							 <br>
+
+							 Your first step will be to have the generated clones move themselves. For this, scratch already provides this with the handy block 
+							 <img src="images/lessonimages/start_as_clone_block.png" width=10% height=10%>. The "When I start as a clone" block is one of
+							 several control blocks. Control blocks sense when a condition is met, such as if the start button is pressed or
+							 if the current instance just started as a clone, and immediately executes all the code connected to it. For you to use it, simply
+							 navigate to the control blocks on the left hand side and drag the "When I start as a clone" block into the code section.
+							 From there, drag the forever block and its contents from its origional location to the WISAAC block. The forever block
+							 is exactly what it sounds like: it will execute the code inside of it forever, untill it is fored to stop with the end button.
+
+							 <br>
+							 Once you have done this, it should behave similar to this:
+							 <br>
+							 <body>
+								<iframe src="https://scratch.mit.edu/projects/930762993/embed"  allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+							</body>
+							<br><br>
+							Now, if you are paying attention, you will notice three major errors with how the code is currently functioning:
+							<ul>
+								<li>Clones do not wait for the others to generate before starting.</li>
+								<li>The origional sprite does not move.</li>
+								<li>With the origional sprite, there are 31 players instead of the intended 30 (10 per team).</li>
+							  </ul>  
+							
+							<br> 
+
+							To correct these, there are a few things you can do. First, use the "hide" block in the looks section before the clones are
+							 generated. Then, instead of the "When I start as clone" block, instad use a combinstion of the 
+							 <img src="images/lessonimages/broadcast_block.png" width=10% height=10%> block, which sends out a signal to all
+							 sprites (including clones), and the <img src="images/lessonimages/receive_block.png" width=10% height=10%> block,
+							 which is a control block that starts when it gets that signal. Finally, add a "show" block, found in the same location
+							 as the hide block, at the beginning of the code under the receive block, to make all active clones visible. 
+							 <br><br>
+							 Because the origional sprite was the one to send the broadcast, it will not trigger the recieve block itself, only the clones.
+							 Once you are finished, the project should function similarly to the working example shown at the beginning of this page. If you feel that 
+							 it starts too abrubtly, feel free to add a small waight block right after the show block. Regardless, congradulations, you have completed
+							 the Encapsulation portion of this project!
+
+
+							 <br><br><br>
+							 <h3><b>Phase 2: Procedural Abstraction</b></h3>
+							 
+							 By this point, your code should loke somewhat similar to this: 
+							 <br>
+							 <button onclick="toggle(this)">Hide Code</button>
+							 <br>
+							<picture hidden id="mypicture">
+								<img src="images/lessonimages/abstraction_code_1.png" width=75% height=75%>
+							  </picture>
+							  
+							  <br /><br />
+							
+							  
+							  <script>
+								let toggle = button => {
+								  let element = document.getElementById("mypicture");
+								  let hidden = element.getAttribute("hidden");
+								  
+								  if (hidden) {
+									 element.removeAttribute("hidden");
+									 button.innerText = "Hide Code";
+								  } else {
+									 element.setAttribute("hidden", "hidden");
+									 button.innerText = "Show Code";
+								  }
+								}
+							  </script>
+
+							Now, while the code does work at this point, it takes a bit of effort to understand, and it is not as
+							 clean as it could be. This is where procedural abstraction comes in. In other words, we will be creating our
+							 own functions (blocks). To create a block, all you need to do is to navigate to the "My Blocks" section of the block
+							 choices and click on "Make a Block". To dictate what that block does, you simply connect code to it
+							 in a similar fashion as you would do for control blocks. First, I want you to create two new blocks:
+							 "Make Teams" and "Play Game", such that you are able to reduce your main code to something like this:
+							 <br>
+
+							 <img src="images/lessonimages/abstraction_procedural_1.png" width=50% height=50%>
+
+							 <br><br>
+
+							 If you have correctly defined the blocks by moving the relevent code to each, it should be similar to this:
+
+							 <br>
+							 <button onclick="toggle2(this)">Hide Code</button>
+							 <br>
+							<picture hidden id="mypicture2">
+								<img src="images/lessonimages/abstraction_procedural_2.png" width=75% height=75%>
+							  </picture>
+							  
+							  <br /><br />
+							
+							  
+							  <script>
+								let toggle2 = button => {
+								  let element = document.getElementById("mypicture2");
+								  let hidden = element.getAttribute("hidden");
+								  
+								  if (hidden) {
+									 element.removeAttribute("hidden");
+									 button.innerText = "Hide Code";
+								  } else {
+									 element.setAttribute("hidden", "hidden");
+									 button.innerText = "Show Code";
+								  }
+								}
+							  </script>
+
+							<br><br>
+							While this is better, it can still be simplified a good deal. For the final two steps, I would like for you to:
+							<br>
+							1: Simplify the "play game" block to a single for loop containing two newly created blocks, "Player Movement"
+							 and "Check Collision". 
+							<br>
+							2: Reduce the "Check Collision" block to a single if statement. 
+							<br>    Hint1: Use the Use the "next costume" block in place of the "switch costume" block.
+							<br>    Hint2: Use a combination of the "and" and "or" operatiors to acheive a single if statement.
+							
+							<br><br>
+
+							Once you complete this, you have successfully used procedural abstraction to simplify your origional bulky
+							code into:
+							<br>
+							<img src="images/lessonimages/abstraction_procedural_3.png" width=75% height=75%>
+							<br>
+
+							With the totality of the code looking like this:
+
+							<br>
+							 <button onclick="toggle3(this)">Hide Code</button>
+							 <br>
+							<picture hidden id="mypicture3">
+								<img src="images/lessonimages/abstraction_procedural_5.png" width=100% height=100%>
+							  </picture>
+							  
+							  <br /><br />
+							
+							  
+							  <script>
+								let toggle3 = button => {
+								  let element = document.getElementById("mypicture3");
+								  let hidden = element.getAttribute("hidden");
+								  
+								  if (hidden) {
+									 element.removeAttribute("hidden");
+									 button.innerText = "Hide Code";
+								  } else {
+									 element.setAttribute("hidden", "hidden");
+									 button.innerText = "Show Code";
+								  }
+								}
+							  </script>
+							
+							<br><br><br><br>
+							
+							Congradulations! You have completed the abstraction activity. Looking at your new code, it should be fairly clear that
+							 it is easier to understand, and thus modify/fix, than the origional code. It also has the benefit of reusability of the defined
+							 methods. Now, before you leave, look back at the code. Notice How
+							 the movement speed, turning radius, and turn sizes are all defined by variables instead of being hard coded
+							 as integers? This is another form of abstraction. It allows for centralized management of the code.
+							 For some extra fun, I have implmented an interface (another form of abstraction) that will allow you to play around
+							 with the variables "Team Size", "Turning Radius", and "Speed" with a slider so that you can see the benefits of using
+							 variables in this manner.
+							<br><br>
+							 <iframe src="https://scratch.mit.edu/projects/931291631/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+							<br><br>
+							<p><a href="index.html"><button type = "button" class = "button button1">   <font color = "black">Home</font> </button>	</a>
+							<a href="abstractionlesson3.html"> <button class = "button button2">  <font color = "black">Back</font> </button>	</a>
+							<br><br>
+
+
+
+				<!--			
+					<boxleft>
+				
+						this is the testing text yada yada yada yada yada	
+						
+					</boxleft>
+					-->
+					</div>
+				</div>
+			</section>
+
+			<style>
+				.button1
+				{
+					color: green;
+					background-color: lightgreen;
+					width: 170px;
+					float: right;
+					transform: translateY(-20%);
+
+  					
+
+				}
+				
+				.button2
+				{
+					color: red;
+					background-color: lightsalmon;
+					float: left;
+					width: 170px;
+					transform: translateY(-20%);
+				}
+
+				.button_lvl1
+				{
+					float: left;
+					color: green;
+					background-color: lightgreen;
+  					width: 120px;
+				}
+
+				.button_lvl1:hover
+				{
+					float: left;
+					color: green;
+					background-color: green;
+  					width: 120px;
+					transform: translateY(-20%);
+					box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+				}
+
+				.button_lvl2
+				{
+					float: left;
+					color: yellow;
+					background-color: yellow;
+					width: 120px;
+					transform: translateY(-20%);
+				}
+
+				.button_lvl2:hover
+				{
+					float: left;
+					color: goldenrod;
+					background-color: gold;
+					width: 120px;
+					transform: translateY(-20%);
+					box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+				}
+
+				.button_lvl3
+				{
+					float: left;
+					color: orange;
+					background-color: orange;
+  					width: 120px;
+  					transform: translateY(-20%);
+
+				}
+
+				.button_lvl3:hover
+				{
+					float: left;
+					color: orange;
+					background-color: rgb(199, 129, 0);
+  					width: 120px;
+  					transform: translateY(-20%);
+					box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+				}
+
+				.button_lvl4
+				{
+					float: left;
+					color: red;
+					background-color: lightsalmon;
+  					width: 120px;
+  					transform: translateY(-20%);
+
+				}
+
+				.button_lvl4:hover
+				{
+					float: left;
+					color: red;
+					background-color: red;
+  					width: 120px;
+  					transform: translateY(-20%);
+					box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+
+				}
+
+			</style>
+
+
+<!-- This is the function for checking solutions-->
+			<html>
+				<head>
+					<script>
+						function solutionCheck() {
+							var name =
+								document.forms.RegForm.Name.value;
+						
+						
+			
+							if (name != "output") {
+								window.alert("Incorrect Please try again");
+								name.focus();
+								return false;
+							}
+							else 
+							{
+								window.alert("Correct!");
+								name.focus();
+								return true;
+							}
+							
+							return true;
+						}
+					</script>
+			
+
+					<style>
+						answerbox {
+							box-sizing: border-box;
+							width: 100%;
+							border: 100px solid black;
+							float: left;
+							align-content: center;
+							align-items: center;
+						}
+			
+						form {
+							margin: 0 auto;
+							width: 600px;
+						}
+			
+						boxleft 
+						{
+							background: ghostwhite;
+							width: 50px;
+							font-size: 20px;
+							padding: 10px;
+							border: 1px solid orangered;
+							margin: 10px;
+						}
+					</style>
+				</head>
+			
+				<body>
+					
+			</html>
+			
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+						<section>
+							<h3>BJC</h3>
+						</section>
+						<section>
+							<ul class="alt">
+								 <h4>Lessons </h4>
+								 <li><a href="C++Intro.html">C++ Intro</a></li>
+								 <li><a href="Lesson1C++.html">C++ Lesson 1</a></li>
+								 <li><a href="Lesson2C++.html">C++ Lesson 2</a></li>
+								 <li><a href="Lesson3C++.html">C++ Lesson 3</a></li>
+								 <li><a href="Lesson4C++.html">C++ Lesson 4</a></li>
+                         
+							</ul>
+						</section>
+						<section>
+							<h4>Follow Us!</h4>
+							<ul class="plain">
+								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                                                                <li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                                                                <li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+						&copy;<a href="https://www.freepik.com/free-photo/data-technology-blue-background-with-hacker-remixed-media_16016731.htm#query=computer%20programming%20background&position=13&from_view=keyword">Images from rawpixel.com</a>
+					   <br> <a href="https://templated.co/">@templatedco</a>
+						
+				</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+<!--Resources Used / Works sited
+
+https://www.freepik.com/free-photo/data-technology-blue-background-with-hacker-remixed-media_16016731.htm#query=computer%20programming%20background&position=13&from_view=keyword">Image by rawpixel.com</a> on Freepik
+
+Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+
+https://www.w3schools.com/howto/howto_js_filter_lists.asp
+https://www.geeksforgeeks.org/html-forms/
+
+
+-->
